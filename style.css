@@ -55,7 +55,7 @@
 }
 
 html {
-    font-size: clamp(18px, 1.2vw, 22px);
+    font-size: clamp(16px, 1.2vw, 22px);
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -78,7 +78,7 @@ body {
     display: grid;
     height: 100vh;
     grid-template-rows: min-content 1fr min-content;
-    grid-template-columns: min(64rem, 100vw);
+    grid-template-columns: min(64rem, calc(100vw - 2rem));
     grid-template-areas:
         'header'
         'main'
@@ -177,6 +177,8 @@ footer {
 
 h1 {
     font-size: 4rem;
+    line-height: 0.8em;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -212,5 +214,11 @@ h3 {
         --c--accent-1: #35589a;
         --c--accent-2: #c7522e;
         --c--accent-3: #4c9c16;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    main, footer {
+        flex-direction: column;
     }
 }
